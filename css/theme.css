@@ -166,20 +166,3 @@
     background-color: var(--bg-primary);
     border-top: 1px solid var(--border-color);
   }
-  
-  /* Loading animation colors */
-  #loading-terminal {
-    background-color: var(--bg-primary);
-  }
-  
-  #loading-terminal .text-green-400 {
-    color: var(--accent-color);
-  }
-  
-  #loading-terminal .bg-gray-800 {
-    background-color: var(--bg-tertiary);
-  }
-  
-  #progress-bar {
-    background-color: var(--accent-color);
-  }

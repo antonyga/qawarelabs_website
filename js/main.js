@@ -1,58 +1,17 @@
 // Wait for the DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
-    // Loading animation
-    simulateLoading();
-    
     // Mobile menu toggle
     setupMobileMenu();
-    
+
     // Smooth scrolling for anchor links
     setupSmoothScrolling();
-    
+
     // Add scroll animations
     setupScrollAnimations();
-});
 
-// Simulates a terminal-style loading sequence
-function simulateLoading() {
-    const loadingTerminal = document.getElementById('loading-terminal');
-    const progressBar = document.getElementById('progress-bar');
-    const loadingText = document.getElementById('loading-text');
-    
-    const loadingSteps = [
-        'ai-testing-framework',
-        'ethical-safeguards-module',
-        'data-quality-tools',
-        'prompt-engineering-utils',
-        'initializing-ui'
-    ];
-    
-    let currentStep = 0;
-    const totalSteps = loadingSteps.length;
-    
-    // Update progress bar and text
-    const loadingInterval = setInterval(() => {
-        if (currentStep < totalSteps) {
-            const progress = (currentStep / totalSteps) * 100;
-            progressBar.style.width = `${progress}%`;
-            loadingText.textContent = loadingSteps[currentStep];
-            currentStep++;
-        } else {
-            clearInterval(loadingInterval);
-            
-            // Add a small delay before hiding the loading screen
-            setTimeout(() => {
-                loadingTerminal.style.opacity = '0';
-                setTimeout(() => {
-                    loadingTerminal.style.display = 'none';
-                }, 500);
-            }, 300);
-        }
-    }, 500);
-    
-    // Style the transition
-    loadingTerminal.style.transition = 'opacity 0.5s ease-out';
-}
+    // Products dropdown
+    setupProductsDropdown();
+});
 
 // Sets up the mobile menu toggle functionality
 function setupMobileMenu() {
@@ -155,42 +114,6 @@ function addTypingEffect(element, text, speed = 50) {
     
     typeChar();
 }
-
-// Loading animation control
-document.addEventListener('DOMContentLoaded', () => {
-    const loadingTerminal = document.getElementById('loading-terminal');
-    const progressBar = document.getElementById('progress-bar');
-    const loadingText = document.getElementById('loading-text');
-    
-    const modules = [
-        'ai-testing-framework',
-        'quality-metrics',
-        'ethical-safeguards',
-        'data-validation'
-    ];
-    
-    let progress = 0;
-    let currentModule = 0;
-    
-    const loadingInterval = setInterval(() => {
-        if (progress >= 100) {
-            clearInterval(loadingInterval);
-            loadingTerminal.style.opacity = '0';
-            setTimeout(() => {
-                loadingTerminal.style.display = 'none';
-            }, 500);
-            return;
-        }
-        
-        progress += 2;
-        progressBar.style.width = `${progress}%`;
-        
-        if (progress % 25 === 0 && currentModule < modules.length) {
-            loadingText.textContent = modules[currentModule];
-            currentModule++;
-        }
-    }, 50);
-});
 
 // Mobile menu toggle
 document.addEventListener('DOMContentLoaded', () => {
@@ -297,14 +220,52 @@ document.addEventListener('DOMContentLoaded', () => {
     // Mobile menu handling
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
-    
+
     mobileMenuButton.addEventListener('click', () => {
         const isHidden = mobileMenu.classList.contains('hidden');
         mobileMenu.classList.toggle('hidden');
-        
+
         // Update icon
         const icon = mobileMenuButton.querySelector('i');
         icon.classList.remove(isHidden ? 'fa-bars' : 'fa-times');
         icon.classList.add(isHidden ? 'fa-times' : 'fa-bars');
     });
 });
+
+// Products dropdown functionality
+function setupProductsDropdown() {
+    // Desktop dropdown
+    const dropdownToggle = document.querySelector('.products-dropdown-toggle');
+    const dropdownMenu = document.querySelector('.products-dropdown-menu');
+
+    if (dropdownToggle && dropdownMenu) {
+        dropdownToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isOpen = dropdownMenu.classList.contains('show');
+            dropdownMenu.classList.toggle('show');
+            dropdownMenu.classList.toggle('hidden', isOpen);
+            dropdownToggle.classList.toggle('active');
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.products-dropdown')) {
+                dropdownMenu.classList.remove('show');
+                dropdownMenu.classList.add('hidden');
+                dropdownToggle.classList.remove('active');
+            }
+        });
+    }
+
+    // Mobile dropdown
+    const mobileToggle = document.querySelector('.mobile-products-toggle');
+    const mobileMenu = document.querySelector('.mobile-products-menu');
+
+    if (mobileToggle && mobileMenu) {
+        mobileToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            mobileMenu.classList.toggle('hidden');
+            mobileToggle.classList.toggle('active');
+        });
+    }
+}
