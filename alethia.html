@@ -109,11 +109,11 @@
                     A platform for testing the safety of Large Language Models. Alethia uses a multi-judge evaluation system where multiple AI models assess whether responses to potentially harmful prompts are safe or unsafe.
                 </p>
                 <div class="flex flex-wrap gap-4">
-                    <a href="#features" class="px-6 py-3 rounded-md bg-green-500 text-white font-medium hover:bg-green-400 transition-colors duration-200">
-                        Explore Features
+                    <a href="https://alethiaai.app" target="_blank" class="px-6 py-3 rounded-md bg-green-500 text-white font-medium hover:bg-green-400 transition-colors duration-200">
+                        <i class="fas fa-desktop mr-2"></i>Request Demo
                     </a>
-                    <a href="#getting-started" class="px-6 py-3 rounded-md border border-gray-500 font-medium hover:border-green-500 hover:text-green-400 transition-colors duration-200">
-                        Get Started
+                    <a href="#features" class="px-6 py-3 rounded-md border border-gray-500 font-medium hover:border-green-500 hover:text-green-400 transition-colors duration-200">
+                        Explore Features
                     </a>
                 </div>
             </div>
@@ -170,6 +170,61 @@
                     <div class="text-green-400 text-3xl mb-4"><i class="fas fa-plug"></i></div>
                     <h3 class="text-xl font-semibold mb-3">Custom Providers</h3>
                     <p>Configure any LLM provider with custom API endpoints. Supports OpenAI Compatible, Anthropic Compatible, or fully Custom Format configurations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Platform Overview - Zig-Zag Feature Breakdown -->
+    <section id="platform-overview" class="py-20 border-b">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col items-center mb-16">
+                <span class="px-3 py-1 bg-green-500 bg-opacity-10 rounded-full text-green-400 text-sm font-medium mb-4">PLATFORM OVERVIEW</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-6">See Alethia in Action</h2>
+                <p class="text-center max-w-3xl">Explore the core screens that power your LLM safety testing workflow.</p>
+            </div>
+
+            <!-- Row 1: Text Left, Screenshot Right (Dashboard) -->
+            <div class="flex flex-col md:flex-row items-center gap-8 lg:gap-16 mb-20">
+                <div class="md:w-1/2">
+                    <h3 class="text-2xl font-bold mb-4">Real-Time Safety Dashboard</h3>
+                    <p class="leading-relaxed">Get a bird's-eye view of your AI safety posture. Track pass rates, test volumes, and safety trends across all your models at a glance. Instantly spot which categories need attention with visual breakdowns of safe vs. unsafe responses.</p>
+                </div>
+                <div class="md:w-1/2">
+                    <img src="img/Dashboard - screenshot Alethia.png" alt="Alethia AI Dashboard" class="rounded-lg border shadow-lg w-full">
+                </div>
+            </div>
+
+            <!-- Row 2: Screenshot Left, Text Right (LLM Configuration) -->
+            <div class="flex flex-col md:flex-row-reverse items-center gap-8 lg:gap-16 mb-20">
+                <div class="md:w-1/2">
+                    <h3 class="text-2xl font-bold mb-4">Flexible Model Configuration</h3>
+                    <p class="leading-relaxed">Connect any LLM provider in minutes. Configure your model under test alongside multiple independent judge models from OpenAI, Anthropic, Google, Mistral, DeepSeek, or your own custom endpoints. Fine-tune parameters like temperature and token limits for precise testing.</p>
+                </div>
+                <div class="md:w-1/2">
+                    <img src="img/LLM Configuration - screenshot Alethia.png" alt="Alethia AI LLM Configuration" class="rounded-lg border shadow-lg w-full">
+                </div>
+            </div>
+
+            <!-- Row 3: Text Left, Screenshot Right (Prompt Library) -->
+            <div class="flex flex-col md:flex-row items-center gap-8 lg:gap-16 mb-20">
+                <div class="md:w-1/2">
+                    <h3 class="text-2xl font-bold mb-4">Comprehensive Prompt Library</h3>
+                    <p class="leading-relaxed">Start testing immediately with 18 built-in safety categories and 131 subcategories covering harmful content, bias, privacy, misinformation, and more. Import your own prompts in bulk, organize by severity, and build targeted test suites for your specific compliance needs.</p>
+                </div>
+                <div class="md:w-1/2">
+                    <img src="img/Prompt Library - screenshot Alethia.png" alt="Alethia AI Prompt Library" class="rounded-lg border shadow-lg w-full">
+                </div>
+            </div>
+
+            <!-- Row 4: Screenshot Left, Text Right (Test Results) -->
+            <div class="flex flex-col md:flex-row-reverse items-center gap-8 lg:gap-16">
+                <div class="md:w-1/2">
+                    <h3 class="text-2xl font-bold mb-4">Detailed Verdict Reports</h3>
+                    <p class="leading-relaxed">Every test produces a transparent, auditable verdict. See how each judge model voted, review criteria-level scores, and understand exactly why a response was flagged as safe or unsafe. Built-in Human-in-the-Loop lets you override AI decisions with full audit trails.</p>
+                </div>
+                <div class="md:w-1/2">
+                    <img src="img/Test Results - screenshot Alethia.png" alt="Alethia AI Test Results" class="rounded-lg border shadow-lg w-full">
                 </div>
             </div>
         </div>
