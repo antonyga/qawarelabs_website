@@ -40,6 +40,13 @@
     backdrop-filter: blur-sm;
     border-bottom: 1px solid var(--border-color);
   }
+
+  /* Mobile menu */
+  #mobile-menu {
+    background-color: var(--header-bg);
+    color: var(--text-primary);
+    border-top: 1px solid var(--border-color);
+  }
   
   header a, header .text-gray-300 {
     color: var(--text-secondary);
